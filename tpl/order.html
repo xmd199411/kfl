@@ -1,0 +1,34 @@
+<div ng-include="'tpl/include/header.html'"></div>
+
+<div class="container order-main">
+    <form name="myForm" ng-show="orderMes.length==0">
+        <div class="form-group">
+            <label for="user">联系人：</label>
+            <input type="text" class="form-control" id="user" placeholder="请输入联系人" ng-model="order.userName">
+        </div>
+        <div class="form-group">
+            <label>性别：</label><br>
+            <label class="radio-inline">
+                <input type="radio" ng-value="1" name="sex"  ng-model="order.userSex"> 先生
+            </label>
+            <label class="radio-inline">
+                <input type="radio" ng-value="2" name="sex"  ng-model="order.userSex"> 女士
+            </label>
+        </div>
+        <div class="form-group">
+            <label for="phone">联系电话：</label>
+            <input type="text" class="form-control" id="phone" placeholder="请输入联系电话" ng-model="order.userPhone">
+        </div>
+        <div class="form-group">
+            <label for="address">送餐地址：</label>
+            <textarea class="form-control" id="address" rows="3" ng-model="order.userAddr"></textarea>
+        </div>
+        <button type="button" class="btn btn-success btn-block" ng-click="btnOrder()">确定下单</button>
+    </form>
+    <h1 class="bg-success" ng-show="orderMes.length>0">订餐成功！您的订单编号为：<span>5</span>。您可以在用户中心查看订单状态。</h1>
+</div>
+
+
+
+
+<div ng-include="'tpl/include/footer.html'"></div>
